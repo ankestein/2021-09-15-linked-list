@@ -19,7 +19,9 @@ public class Main {
         System.out.println(animalList.toString());
 
         Animal animal4 = new Animal("cow");
-        //animalList.addAnimal(animal4);
-        //System.out.println(animalList);
+        animalList.addAnimal(animal4);
+        System.out.println(animalList);
+
+
     }
 }
