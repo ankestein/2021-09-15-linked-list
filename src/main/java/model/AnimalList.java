@@ -66,4 +66,26 @@ public class AnimalList {
         return tail;
     }
 
+
+    public void remove(Animal animal) {
+        while(head != null && head.getValue().getName().equals(animal.getName())) {
+            head = head.getNext();
+        }
+
+        if (head == null) {
+            return;
+        }
+
+        AnimalListItem item = head;
+
+        while(item.getNext() != null) {
+            if (item.getNext().getValue().getName().equals(animal.getName())) {
+                item.setNext(item.getNext().getNext());
+            }
+            else {
+                item = item.getNext();
+            }
+        }
+    }
+
 }

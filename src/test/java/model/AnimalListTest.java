@@ -96,6 +96,90 @@ public class AnimalListTest {
 
 
 
+    @Test
+    public void testRemoveFirstElement() {
+        //GIVEN
+        AnimalList animalList = new AnimalList();
+        Animal animal1 = new Animal();
+        animal1.setName("Hund");
+        Animal animal2 = new Animal();
+        animal2.setName("Katze");
+        animalList.addAnimal(animal1);
+        animalList.addAnimal(animal2);
+        //WHEN
+        animalList.remove(animal1);
+        //THEN
+        Assertions.assertEquals("Katze", animalList.toString());
+    }
+
+    @Test
+    public void testRemoveLastElement() {
+        //GIVEN
+        AnimalList animalList = new AnimalList();
+        Animal animal1 = new Animal();
+        animal1.setName("Hund");
+        Animal animal2 = new Animal();
+        animal2.setName("Katze");
+        animalList.addAnimal(animal1);
+        animalList.addAnimal(animal2);
+        //WHEN
+        animalList.remove(animal2);
+        //THEN
+        Assertions.assertEquals("Hund", animalList.toString());
+    }
+
+    @Test
+    public void testRemoveMiddleElement() {
+        //GIVEN
+        AnimalList animalList = new AnimalList();
+        Animal animal1 = new Animal();
+        animal1.setName("Hund");
+        Animal animal2 = new Animal();
+        animal2.setName("Katze");
+        Animal animal3 = new Animal();
+        animal3.setName("Tiger");
+        animalList.addAnimal(animal1);
+        animalList.addAnimal(animal2);
+        animalList.addAnimal(animal3);
+        //WHEN
+        animalList.remove(animal2);
+        //THEN
+        Assertions.assertEquals("Hund -> Tiger", animalList.toString());
+    }
+
+    @Test
+    public void testRemoveNotExistingElement() {
+        //GIVEN
+        AnimalList animalList = new AnimalList();
+        Animal animal1 = new Animal();
+        animal1.setName("Hund");
+
+        //WHEN
+        animalList.remove(animal1);
+        //THEN
+        Assertions.assertEquals("", animalList.toString());
+    }
+
+    @Test
+    public void testRemoveMultipleElement() {
+        //GIVEN
+        AnimalList animalList = new AnimalList();
+        Animal animal1 = new Animal();
+        animal1.setName("Hund");
+        Animal animal2 = new Animal();
+        animal2.setName("Hund");
+
+        animalList.addAnimal(animal1);
+        animalList.addAnimal(animal2);
+
+        //WHEN
+        animalList.remove(animal1);
+        //THEN
+        Assertions.assertEquals("", animalList.toString());
+    }
+
+
+
 
 
 }
