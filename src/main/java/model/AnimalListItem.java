@@ -14,7 +14,7 @@ public class AnimalListItem {
         return value;
     }
 
-    public void Animal setValue(Animal value){
+    public void setValue(Animal value){
         this.value = value;
     }
 
@@ -24,5 +24,13 @@ public class AnimalListItem {
 
     public void setNext(AnimalListItem next) {
         this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        return "AnimalListItem{" +
+                "value=" + value +
+                ", next=" + next +
+                '}';
     }
 }
