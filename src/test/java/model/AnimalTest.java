@@ -8,8 +8,7 @@ public class AnimalTest {
     @Test
     public void AnimalToStringTest(){
         // given
-        Animal animal = new Animal();
-        animal.setName("dog");
+        Animal animal = new Animal("dog");
 
         // when
         String actual = animal.toString();

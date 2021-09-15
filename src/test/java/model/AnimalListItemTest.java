@@ -8,8 +8,7 @@ public class AnimalListItemTest {
     @Test
     public void AnimalListItemToStringTest(){
         // given
-        Animal animal = new Animal();
-        animal.setName("cat");
+        Animal animal = new Animal("cat");
         AnimalListItem animalListItem1 = new AnimalListItem(animal);
         // when
         String actual = animalListItem1.toString();
