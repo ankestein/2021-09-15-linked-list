@@ -1,10 +1,12 @@
-import model.Animal;
-import model.AnimalList;
-import model.AnimalListItem;
+package model;
 
-public class Main {
+import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 
-    public static void main(String[] args) {
+public class AnimalListTest {
+    @Test
+    public void AnimalListToStringTest(){
+        // given
         Animal animal1 = new Animal("dog");
         Animal animal2 = new Animal("cat");
         Animal animal3 = new Animal("bird");
@@ -16,10 +18,11 @@ public class Main {
         animal1ListItem.setNext(animal2ListItem);
         animal2ListItem.setNext(animal3ListItem);
         AnimalList animalList = new AnimalList(animal1ListItem);
-        System.out.println(animalList.toString());
 
-        Animal animal4 = new Animal("cow");
-        //animalList.addAnimal(animal4);
-        //System.out.println(animalList);
+        // when
+        String actual = animalList.toString();
+
+        // then
+        Assertions.assertEquals("dog -> cat -> bird", actual);
     }
 }
